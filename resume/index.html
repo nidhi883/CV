@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resume.css">
+  <title>Curriculum vitae</title>
+
+</head>
+
+<body>
+  <form id="data" action="next.html" method="post">
+    <div class="container">
+      
+      <input type="file" id="fileInput" name="fileInput" accept="image/*" multiple>
+      <img id="output" name="output" width="200" /> 
+      <div class="contact">
+      <label class="contactt">Contact: </label><br>
+      <label class="phoneNum">Phone: </label>
+      <input type="number" id="phone" name="phone"><br>
+      <label class="emailAdd">Email: </label>
+      <input type="email" id="email" name="email" placeholder="abc@gmail.com"> <br>
+      <label class="address">Address: </label>
+      <input type="text" id="add" name="add">
+      <label class="linkdin">Linkdin: </label>
+      <input type="text" id="linkdin" name="linkdin">
+    </div>
+
+    <div class="Skills">
+      <label class="skil">Skills:</label>
+      
+      <textarea name="skill" id="skill" ></textarea>
+
+      <!-- <button onclick="AddSkills()" class="skillbtn">Add</button> -->
+    </div>
+    <div class="language">
+      <label>Language: </label>
+      <textarea name="lang" id="lang" ></textarea>
+    </div>
+    <div class="personaldeatils">
+      <label class="name">Name: </label>
+      <input type="text" name="name" id="name" placeholder="Full Name"> <br>
+      <label class="std">Occupation: </label>
+      <input type="text" name="Occ" id="Occ" placeholder="Occupation"> <br>
+
+    </div>
+    <div>
+      <label class="about">About yourself: </label>
+      <input type="text" id="yourself" name="yourself" placeholder="About yourself">
+
+    </div>
+    <div class="education">
+      <label class="edu">Education: </label><br>
+      <label>Graduation*</label>
+      <input type="text" id="edu" name="edu" required> <br>
+      <label>12*</label>
+      <input type="text" id="cls" name="cls" required> <br>
+      <label>10th*</label>
+      <input type="text" id="clas" name="clas" required>
+    </div>
+    <div>
+      <label>Project: </label>
+      <input type="text" id="project" name="project">
+    </div>
+    <div class="experience">
+      <label>Experience: </label>
+      <input type="text" id="Exp" name="Exp">
+    </div>
+    <div>
+      <button type="submit" id="btn">Submit</button>
+    </div>
+    </div>
+    <script>
+      
+      document.getElementById('data').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const fileInput = document.getElementById('fileInput');
+           const file = fileInput.files[0];
+           if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                localStorage.setItem('uploadedImage', reader.result);
+                window.open('next.html', '_blank');
+            };
+        } else {
+            alert('Please select an image file.');
+        }
+
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const add = document.getElementById('add').value;
+        const linkdin = document.getElementById('linkdin').value
+        const skill = document.getElementById('skill').value;
+        const addskill =  document.getElementById("add-skill")
+        const lang = document.getElementById('lang').value;
+        const name = document.getElementById('name').value;
+        const Occ = document.getElementById('Occ').value;
+        const yourself = document.getElementById('yourself').value;
+        const edu = document.getElementById('edu').value;
+        const cls = document.getElementById('cls').value;
+        const clas = document.getElementById('clas').value;
+        const project = document.getElementById('project').value;
+        const Exp = document.getElementById('Exp').value;
+          
+        localStorage.setItem('phone', phone);
+        localStorage.setItem('email', email);
+        localStorage.setItem('add', add);
+        localStorage.setItem('linkdin',linkdin);
+        localStorage.setItem('skill', skill);
+        localStorage.setItem("add-skill", add-skill);
+        localStorage.setItem('lang', lang);
+        localStorage.setItem('name', name);
+        localStorage.setItem('Occ', Occ);
+        localStorage.setItem('yourself', yourself);
+        localStorage.setItem('edu', edu);
+        localStorage.setItem('cls', cls);
+        localStorage.setItem('clas', clas)
+        localStorage.setItem('project', project);
+        localStorage.setItem('Exp', Exp);
+        window.location.href = 'next.html';
+      });
+
+    </script>
+  </form>
+</body>
+
+</html>

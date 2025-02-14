@@ -1,0 +1,33 @@
+.container{
+    padding: 10px 30px; 
+    background: rgb(240, 240, 240);
+    border-radius: 10px;  
+    height: 16cm;
+    width: 15cm; 
+    margin: auto;
+   
+   
+}
+.imagee{
+    cursor: pointer;
+
+}
+label{
+    width: 205px;
+    display: inline-block;
+} 
+#btn{
+    cursor: pointer;
+    height: 40px;
+    width: 60px;
+    border-radius: 0.5rem;
+}
+
+#uploadedImage{
+    height: 120px;
+  width: 120px;
+  border-radius: 4.8rem;
+
+
+}
+

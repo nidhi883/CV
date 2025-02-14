@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Julius+Sans+One&family=Open+Sans&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="resume2.css">
+  <title>Output</title>
+</head>
+    <page size="A4">
+   <div class="result">
+    <div class="result">
+    <div class="left-div">
+       <img src="" alt="Uploaded Image" id="image">
+       <div class="details">
+        <div class="item bottomLineSeparator">
+        
+       <h2>
+        CONTACT
+       </h2>
+       <div class="smallText">
+       <p>
+        <i class="fa fa-phone contactIcon" aria-hidden="true"></i>
+        <span id="Number"></span>
+       </p>
+       <p>
+        <a href="mailto:lorem@ipsum.com@gmail.com">
+          <i class="fa fa-envelope contactIcon" aria-hidden="true"></i>
+          <span id="email"></span>
+        </a>
+       </p>
+      
+       <p>
+        <i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>
+        <span id="address"></span>
+       </p>
+       <p><a href="linkdin.com"></a>
+         <i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+         <span id="linkdin-profile"></span>
+       </p>
+        
+       </div>
+      </div>
+      <div class="item bottomLineSeparator">
+        <h2>
+          SKILLS
+        </h2>
+        <span class="desc" id="skills"> </span>
+      </div>
+        <h2>
+          LANGUAGE
+        </h2>
+        <span class="desc" id="language"> </span><br>
+       
+      </div>
+    
+        </div>
+        <div class="right-div">
+          <div>
+            <h1>
+              <span class="first-name" id="name"></span>
+            </h1>
+            <div class="smallText">
+              <h3>
+                <span class="phone-val" id="Occupation"></span>
+              </h3>
+            </div>
+          </div>
+        
+            <h2>
+              About Me
+            </h2>
+            <span class="desc" id="about-yourself"> </span>
+          
+
+        <h2>Experience</h2>
+        
+        <span class="desc" id="experiences"> </span>
+        
+        <h2>
+          Academic Details
+        </h2>
+        <h4>
+          Graduation 
+        </h4>
+        <span class="desc" id="graduation"> </span>
+        <h4>
+          Intermediate
+        </h4>
+        <span class="desc" id="tweleve"> </span>
+        <h4>Highschool</h4>
+        <span class="desc" id="ten"> </span>
+        <h2>Project:</h2>
+        <span class="desc" id="projectes"> </span>
+        
+      </div>
+      </div>
+      </div> <br>
+     
+      
+</page> 
+<div>
+  <button id="btn" onclick="printpage()">Print</button>
+  </div>
+
+    <script>
+      window.onload = function () {
+        const uploadedImage = localStorage.getItem('uploadedImage');
+        if (uploadedImage) {
+          const imgElement = document.getElementById('uploadedImage');
+          imgElement.src = uploadedImage;
+        } else {
+          alert('No image uploaded.');
+        }
+      };
+      function populateSkills(skill) {
+        var skillsInput = skill;
+        var skillsArray = skillsInput.split(","); 
+        
+        var skillsHTML = ""; 
+      
+        for (var i = 0; i < skillsArray.length; i++) {
+          skillsHTML += skillsArray[i].trim() + "<br>"; 
+        }
+        
+        document.getElementById("skills").innerHTML = skillsHTML;
+      }
+      function populatelanuage(lang) {
+        var langInput = lang;
+        var langArray = langInput.split(","); 
+        
+        var langHTML = ""; 
+      
+        for (var i = 0; i < langArray.length; i++) {
+          langHTML += langArray[i].trim() + "<br>"; 
+        }
+        
+        document.getElementById("language").innerHTML = langHTML;
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const uploadedImage = localStorage.getItem('uploadedImage');
+        const phone = localStorage.getItem('phone');
+        const email = localStorage.getItem('email');
+        const add = localStorage.getItem('add');
+        const linkdin = localStorage.getItem('linkdin')
+        const skill = localStorage.getItem('skill');
+        const lang = localStorage.getItem('lang');
+        const name = localStorage.getItem('name');
+        const Occ = localStorage.getItem('Occ');
+        const yourself = localStorage.getItem('yourself');
+        const edu = localStorage.getItem('edu');
+        const cls = localStorage.getItem('cls');
+        const clas = localStorage.getItem('clas')
+        const project = localStorage.getItem('project');
+        const Exp = localStorage.getItem('Exp');
+        let imageElement = document.getElementById("image");
+        imageElement.src = uploadedImage;
+        let OccElement = document.getElementById("Occupation");
+        OccElement.innerText = Occ;
+        let nameElement = document.getElementById("name");
+        nameElement.innerText = name;
+        let emailElement = document.getElementById("email");
+        emailElement.innerText = email;
+        let phoneElement = document.getElementById("Number");
+        phoneElement.innerText = phone;
+        let addElement = document.getElementById("address");
+        addElement.innerText = add;
+        let linkdinElement = document.getElementById('linkdin-profile');
+        linkdinElement.innerText = linkdin; 
+        let aboutElement = document.getElementById("about-yourself");
+        aboutElement.innerText = yourself;
+        let ExpElement = document.getElementById("experiences");
+        ExpElement.innerText = Exp;
+        let eduElement = document.getElementById("graduation");
+        eduElement.innerText = edu;
+        let tewElement = document.getElementById("tweleve");
+        tewElement.innerText = cls;
+        let tenElement = document.getElementById("ten");
+        tenElement.innerText = clas;
+        let projectElement = document.getElementById("projectes");
+        projectElement.innerText = project;
+        let skillElement = document.getElementById("skills");
+        skillElement.innerText = skill;
+        let lanugElement = document.getElementById("language");
+        lanugElement.innerText = lang;
+        populateSkills(skill);
+        populatelanuage(lang) ;
+      });
+      function printpage() {
+        let printButton = document.getElementById("btn");
+        printButton.style.visibility = 'hidden';
+        window.print()
+        printButton.style.visibility = 'visible';
+    }
+    </script>
+    </body>
+
+</html>
